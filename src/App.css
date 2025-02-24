@@ -12,3 +12,7 @@ body {
 .newsreader {
   font-family: "Newsreader", serif;
 }
+
+.icon-red {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(93%) saturate(3000%) hue-rotate(345deg) brightness(85%) contrast(95%);
+}

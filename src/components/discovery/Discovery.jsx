@@ -1,5 +1,6 @@
 import React from "react";
 import { discoveryData } from "./data";
+import { iconsData } from "../../static/data";
 
 const Discovery = () => {
   const data = discoveryData.map((item) => item).splice(0, 8);
@@ -54,6 +55,37 @@ const Discovery = () => {
           <button className="px-5 uppercase py-3 bg-[#000] font-[500] cursor-pointer hover:bg-[#DC143C] rounded-sm text-white">
             Discover more books
           </button>
+        </div>
+      </div>
+      <div className="w-full h-fit bg-[#f4f4f4] py-6">
+        <div className="py-5">
+          <h2 className="md:text-5xl text-3xl text-center font-[400]">
+            What we do
+          </h2>
+          <div className="w-[80px] my-5 mx-auto h-[2px] bg-[#DC143C]"></div>
+        </div>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1800"
+          className="grid grid-cols-1 md:grid-cols-5 newsreader"
+        >
+          {iconsData.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="cursor-pointer flex justify-center items-center flex-col"
+              >
+                <div className="md:w-1/2 w-[30%] md:h-2/3 h-[50%]">
+                  <img
+                    src={item.icons}
+                    alt={`book image ${item.id}`}
+                    className="w-full h-full object-cotain icon-red"
+                  />
+                </div>
+                <h3 className="text-xl pt-4 font-[500]">{item.title}</h3>
+              </div>
+            );
+          })}
         </div>
       </div>
     </React.Fragment>
