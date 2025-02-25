@@ -10,7 +10,7 @@ const Discovery = () => {
         <h2 className="md:text-5xl text-3xl text-center font-[400]">
           Discover Your Next Book
         </h2>
-        <div className="w-[80px] my-5 mx-auto h-[2px] bg-[#f4f4f4]"></div>
+        <div className="w-[80px] my-5 mx-auto h-[2px] bg-[#DC143C]"></div>
 
         <div
           data-aos="fade-down"
