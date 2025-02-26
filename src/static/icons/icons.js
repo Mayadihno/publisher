@@ -7,6 +7,7 @@ import { MdClose, MdEmail, MdOutlineLocationOn } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { PiPhoneCallThin } from "react-icons/pi";
+import { BsSend } from "react-icons/bs";
 
 export const ICONS = {
   instagram: FaInstagram,
@@ -23,4 +24,5 @@ export const ICONS = {
   x: BsTwitterX,
   whatsapp: FaWhatsapp,
   facebook: FaFacebookF,
+  send: BsSend,
 };

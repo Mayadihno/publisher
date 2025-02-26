@@ -16,3 +16,12 @@ body {
 .icon-red {
   filter: brightness(0) saturate(100%) invert(20%) sepia(93%) saturate(3000%) hue-rotate(345deg) brightness(85%) contrast(95%);
 }
+
+.bg{
+  background-image: url('https://images.pexels.com/photos/6340669/pexels-photo-6340669.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  height: 85vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
