@@ -13,9 +13,9 @@ const Discovery = () => {
         <div className="w-[80px] my-5 mx-auto h-[2px] bg-[#DC143C]"></div>
 
         <div
-          data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="2300"
+          // data-aos="fade-down"
+          // data-aos-easing="linear"
+          // data-aos-duration="2300"
           className="grid grid-cols-1 md:mx-8 mx-2 md:grid-cols-4 gap-4 my-16 newsreader"
         >
           {data.map((item) => {
@@ -31,7 +31,7 @@ const Discovery = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div data-aos="fade-right" className="mt-2">
+                <div className="mt-2">
                   <h4 className="text-base font-[500]">{item.title}</h4>
                   <div className="pt-2">
                     <p className="text-sm font-[400]">
@@ -65,9 +65,9 @@ const Discovery = () => {
           <div className="w-[80px] my-5 mx-auto h-[2px] bg-[#DC143C]"></div>
         </div>
         <div
-          data-aos="fade-left"
-          data-aos-duration="1800"
-          className="grid grid-cols-1 md:grid-cols-5 newsreader"
+          // data-aos="fade-left"
+          // data-aos-duration="1800"
+          className="grid grid-cols-2 gap-y-6 md:gap-y-0 md:grid-cols-5 newsreader"
         >
           {iconsData.map((item) => {
             return (

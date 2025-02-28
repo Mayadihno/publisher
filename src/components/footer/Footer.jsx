@@ -14,12 +14,12 @@ const Footer = () => {
               className=" w-full h-full object-contain rounded-full"
             />
           </div>
-          <h3 className="text-2xl font-[500] leading-8 pt-3">
+          <h3 className="md:text-2xl text-xl font-[500] leading-8 pt-3">
             Caligata Publishing Company Limited
           </h3>
         </div>
 
-        <div className="flex justify-between pt-10 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between md:pt-10 pt-8 ml-5 md:max-w-7xl mx-auto">
           <div className="">
             <h2 className="pb-5 text-xl">LET’S GET TOGETHER</h2>
             <div className="flex flex-col space-y-3">
@@ -33,7 +33,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="md:ml-[-100px] ml-0">
+          <div className="md:ml-[-100px] ml-0 my-8 md:my-0">
             <h2 className="pb-5 text-xl">QUICK MENU</h2>
             <div className="flex flex-col space-y-4">
               {quickMenu.map((item) => (
@@ -66,8 +66,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" border-t-[1px] mt-10 border-[#fff] max-w-9xl mx-auto">
-          <p className="text-center text-sm text-gray-400 py-5">
+        <div className=" border-t-[1px] md:mt-10 mt-5 border-[#fff] max-w-9xl mx-auto">
+          <p className="text-center md:text-sm text-xs text-gray-400 py-5">
             Copyright {new Date().getFullYear()} © Theme Created By{" "}
             <a
               href="https://mayadihno.vercel.app/"

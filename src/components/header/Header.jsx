@@ -50,11 +50,11 @@ const Header = () => {
               </div>
             </div>
             <div className="md:flex hidden items-center space-x-1">
-              <ICONS.phone size={20} color="797979" className="mt-2" />
+              <ICONS.phone size={20} color="#797979" />
               <h5 className="text-[#797979] text-base font-medium">
                 Free call:{" "}
-                <span className="font-bold text-xl text-[#DE324D]">
-                  123-456-789
+                <span className="font-bold newsreader text-xl text-[#DE324D]">
+                  +234-803-344-3562
                 </span>
               </h5>
             </div>
