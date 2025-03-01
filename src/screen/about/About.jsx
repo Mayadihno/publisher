@@ -1,0 +1,108 @@
+import React from "react";
+import { iconsData } from "../../static/data";
+import Team from "../../components/team/team";
+
+const About = () => {
+  return (
+    <React.Fragment>
+      <div className="bg-[#000] py-10 text-center text-white">
+        <h3 className="text-5xl">About Us</h3>
+      </div>
+      <div className="my-10 max-w-5xl mx-auto">
+        <h2 className="md:text-5xl newsreader text-3xl text-center font-[400]">
+          Our Mission
+        </h2>
+        <div className="w-[80px] my-3 mx-auto h-[2px] bg-[#DC143C]"></div>
+        <p className="text-lg pt-6 text-neutral-500 text-center newsreader leading-8">
+          Our mission is to bring the passion and love for reading books back.
+          whether it&apos;s a regular paper book, or an online edition, we want
+          our readers to know that we appreciate quality and artful
+          storytelling. Join our community and enjoy multiple genres, modern and
+          classic authors, reviews, critics and more!
+        </p>
+      </div>
+      <div className="max-w-6xl mx-auto my-7">
+        <div className="flex justify-between items-center my-10">
+          <div className="">
+            <h2 className="text-4xl font-[600]">Who We Are</h2>
+            <h3 className="text-lg font-[500] text-neutral-500 italic">
+              Team of book-loving professionals
+            </h3>
+            <p className="md:w-[80%] w-full text-base font-normal leading-8 text-gray-700 pt-3">
+              Our dedicated team of publishing professionals is committed to
+              helping authors realize their very best work and to finding
+              innovative new ways of bringing stories and ideas to audiences
+              worldwide.
+            </p>
+          </div>
+          <div className="relative w-full h-[300px]">
+            <img
+              src="https://images.pexels.com/photos/7710153/pexels-photo-7710153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Main Image"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+
+            <div className="absolute bottom-[1px] right-[-60px] w-[280px] h-[170px]">
+              <img
+                src="https://images.pexels.com/photos/6592746/pexels-photo-6592746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Overlay Image"
+                className="w-full h-full object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-end items-center my-10 gap-10 my-20">
+          <div className="relative w-full md:w-[50%] h-[300px]">
+            <img
+              src="https://images.pexels.com/photos/9572619/pexels-photo-9572619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Main Image"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+
+            <div className="absolute top-[-50px] left-[-50px] w-[200px] h-[150px] md:w-[250px] md:h-[180px] shadow-xl">
+              <img
+                src="https://images.pexels.com/photos/6157214/pexels-photo-6157214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Overlay Image"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+          </div>
+
+          <div className="w-full md:w-[40%] text-right transform scale-x-[1] md:ml-auto">
+            <h2 className="text-4xl font-bold text-gray-900">What We Do</h2>
+            <h3 className="text-lg font-medium text-neutral-500 italic">
+              Finding new ways of bringing stories
+            </h3>
+            <p className="text-base font-normal leading-8 text-gray-700 pt-3">
+              We scan the new media landscape and spot budding authors indeed,
+              many have done so and have already brought new talent to the
+              market with number one bestsellers.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-y-6 md:gap-y-0 md:grid-cols-5 mb-20">
+          {iconsData.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="cursor-pointer flex justify-center items-center flex-col"
+              >
+                <div className="md:w-1/2 w-[30%] md:h-2/3 h-[50%]">
+                  <img
+                    src={item.icons}
+                    alt={`book image ${item.id}`}
+                    className="w-full h-full object-cotain icon-red"
+                  />
+                </div>
+                <h3 className="text-xl pt-4 font-[500]">{item.title}</h3>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <Team />
+    </React.Fragment>
+  );
+};
+
+export default About;

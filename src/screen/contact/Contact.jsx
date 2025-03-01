@@ -51,7 +51,7 @@ const Contact = () => {
               className="col-span-1"
               data-aos="fade-left"
               data-aos-easing="linear"
-              data-aos-duration="2300"
+              data-aos-duration="1500"
             >
               <h2 className="md:text-5xl text-3xl font-[400]">Contact Us</h2>
               <div className="w-[80px] my-2 h-[2px] bg-[#DC143C]"></div>
@@ -81,7 +81,7 @@ const Contact = () => {
               className="col-span-2"
               data-aos="fade-right"
               data-aos-easing="linear"
-              data-aos-duration="2300"
+              data-aos-duration="1500"
             >
               <form onSubmit={handleSubmit}>
                 <div className="flex md:flex-row flex-col items-center justify-center md:space-y-0 space-x-0 space-y-7 md:space-x-5">
