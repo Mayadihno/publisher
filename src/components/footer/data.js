@@ -40,7 +40,7 @@ export const quickMenu = [
     link: "/contact",
   },
   {
-    id: 3,
+    id: 4,
     text: "Store",
     link: "/store",
   },
@@ -60,7 +60,7 @@ export const socialMedia = [
     icon: ICONS.x,
   },
   {
-    id: 3,
+    id: 4,
     icon: ICONS.whatsapp,
   },
 ];
