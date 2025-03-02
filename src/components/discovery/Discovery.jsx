@@ -1,6 +1,7 @@
 import React from "react";
 import { discoveryData } from "./data";
 import { iconsData } from "../../static/data";
+import { Link } from "react-router-dom";
 
 const Discovery = () => {
   const data = discoveryData.map((item) => item).splice(0, 8);
@@ -12,15 +13,11 @@ const Discovery = () => {
         </h2>
         <div className="w-[80px] my-5 mx-auto h-[2px] bg-[#DC143C]"></div>
 
-        <div
-          // data-aos="fade-down"
-          // data-aos-easing="linear"
-          // data-aos-duration="2300"
-          className="grid grid-cols-1 md:mx-8 mx-2 md:grid-cols-4 gap-4 my-16 newsreader"
-        >
+        <div className="grid grid-cols-1 md:mx-8 mx-2 md:grid-cols-4 gap-4 my-16 newsreader">
           {data.map((item) => {
             return (
-              <div
+              <Link
+                to={`/book-details/${item.id}`}
                 key={item.id}
                 className="cursor-pointer bg-[#f4f4f4] p-3 shadow-md rounded-md"
               >
@@ -47,7 +44,7 @@ const Discovery = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
