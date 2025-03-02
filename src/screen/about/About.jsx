@@ -1,6 +1,6 @@
 import React from "react";
 import { iconsData } from "../../static/data";
-import Team from "../../components/team/team";
+import Leader from "../../components/team/Leader";
 
 const About = () => {
   return (
@@ -100,7 +100,7 @@ const About = () => {
           })}
         </div>
       </div>
-      <Team />
+      <Leader />
     </React.Fragment>
   );
 };

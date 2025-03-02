@@ -1,7 +1,7 @@
 import React from "react";
 import { teamData } from "./data";
 
-const Team = () => {
+const Leader = () => {
   return (
     <React.Fragment>
       <div className="bg-[#E5EAED] h-fit py-5">
@@ -33,4 +33,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Leader;
