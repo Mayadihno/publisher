@@ -9,6 +9,7 @@ const MapComponent = ({ address, position }) => {
       zoom={15}
       scrollWheelZoom={false}
       className="w-full md:h-[80vh] h-[50vh]"
+      style={{ zIndex: 0 }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={position}>

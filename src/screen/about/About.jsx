@@ -8,7 +8,7 @@ const About = () => {
       <div className="bg-[#000] py-10 text-center text-white">
         <h3 className="text-5xl">About Us</h3>
       </div>
-      <div className="my-10 max-w-5xl mx-auto">
+      <div className="my-10 md:max-w-5xl md:mx-auto mx-5">
         <h2 className="md:text-5xl newsreader text-3xl text-center font-[400]">
           Our Mission
         </h2>
@@ -21,8 +21,8 @@ const About = () => {
           classic authors, reviews, critics and more!
         </p>
       </div>
-      <div className="max-w-6xl mx-auto my-7">
-        <div className="flex justify-between items-center my-10">
+      <div className="md:max-w-6xl md:mx-auto mx-5 my-7">
+        <div className="flex justify-between md:flex-row flex-col items-center my-10">
           <div className="">
             <h2 className="text-4xl font-[600]">Who We Are</h2>
             <h3 className="text-lg font-[500] text-neutral-500 italic">
@@ -35,14 +35,14 @@ const About = () => {
               worldwide.
             </p>
           </div>
-          <div className="relative w-full h-[300px]">
+          <div className="relative w-full h-[300px] md:mt-0 mt-10">
             <img
               src="https://images.pexels.com/photos/7710153/pexels-photo-7710153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Main Image"
               className="w-full h-full object-cover rounded-lg shadow-lg"
             />
 
-            <div className="absolute bottom-[1px] right-[-60px] w-[280px] h-[170px]">
+            <div className="absolute md:bottom-[1px] bottom-[-50px] md:right-[-60px] right-1 w-[280px] h-[170px]">
               <img
                 src="https://images.pexels.com/photos/6592746/pexels-photo-6592746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Overlay Image"
@@ -59,7 +59,7 @@ const About = () => {
               className="w-full h-full object-cover rounded-lg shadow-lg"
             />
 
-            <div className="absolute top-[-50px] left-[-50px] w-[200px] h-[150px] md:w-[250px] md:h-[180px] shadow-xl">
+            <div className="absolute md:top-[-50px] top-40 left-22 md:left-[-50px] w-[280px] h-[170px] md:w-[280px] md:h-[180px] shadow-xl">
               <img
                 src="https://images.pexels.com/photos/6157214/pexels-photo-6157214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Overlay Image"
@@ -68,7 +68,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[40%] text-right transform scale-x-[1] md:ml-auto">
+          <div className="w-full md:w-[40%] text-right md:pt-0 pt-7 transform scale-x-[1] md:ml-auto">
             <h2 className="text-4xl font-bold text-gray-900">What We Do</h2>
             <h3 className="text-lg font-medium text-neutral-500 italic">
               Finding new ways of bringing stories

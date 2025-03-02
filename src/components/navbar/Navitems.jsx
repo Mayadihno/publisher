@@ -10,7 +10,9 @@ const NavItems = () => {
         <div
           key={item.id}
           className={`${
-            location.pathname === item.link ? "text-[#DC143C]" : "text-black"
+            location.pathname === item.link
+              ? "text-[#DC143C] border-b-[2px]"
+              : "text-black"
           } text-lg font-semibold hover:text-[#DC143C]`}
         >
           <Link to={item.link}>{item.label}</Link>

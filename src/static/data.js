@@ -6,9 +6,9 @@ import image5 from "../assets/icons/editing.png";
 
 export const navItems = [
   { id: 1, label: "Home", link: "/" },
-  { id: 2, label: "Store", link: "store" },
-  { id: 3, label: "About Us", link: "about" },
-  { id: 4, label: "Contact Us", link: "contact" },
+  { id: 2, label: "Store", link: "/store" },
+  { id: 3, label: "About Us", link: "/about" },
+  { id: 4, label: "Contact Us", link: "/contact" },
 ];
 
 export const iconsData = [

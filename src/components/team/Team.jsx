@@ -14,10 +14,10 @@ const Team = () => {
         <h4 className="text-xl pt-2 italic font-[500] text-center">
           Book Lovers
         </h4>
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-6 mt-10 mb-20 mx-20">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-6 mt-10 mb-20 md:mx-20 mx-10">
           {teamData.map((item) => (
             <div className="" key={item.id}>
-              <div className="w-full h-full">
+              <div className="w-full md:h-full h-[500px]">
                 <img
                   src={item.image}
                   className="w-full h-full object-contain hover:animate-pulse cursor-pointer"

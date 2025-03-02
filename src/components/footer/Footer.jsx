@@ -19,7 +19,7 @@ const Footer = () => {
           </h3>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between md:pt-10 pt-8 ml-5 md:max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between md:pt-10 pt-8 ml-6 md:max-w-7xl md:mx-auto">
           <div className="">
             <h2 className="pb-5 text-xl">LET’S GET TOGETHER</h2>
             <div className="flex flex-col space-y-3">
