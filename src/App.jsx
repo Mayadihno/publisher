@@ -7,10 +7,12 @@ import Footer from "./components/footer/Footer";
 import Contact from "./screen/contact/Contact";
 import About from "./screen/about/About";
 import Description from "./screen/bookdescription/Description";
+import ScrollToTop from "./components/scrolltop/ScrollTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Navbar />
       <Routes>

@@ -3,6 +3,7 @@ import NavItems from "./Navitems";
 import { ICONS } from "../../static/icons/icons";
 import image from "../../assets/logo.png";
 import Menubar from "./Menubar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -15,7 +16,8 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center md:pt-0 py-2 md:py-0">
           <div className="flex flex-col items-center md:py-2 py-0">
-            <div
+            <Link
+              to={"/"}
               data-aos="fade-up"
               data-aos-duration="1600"
               className="w-[60px] md:h-[60px]"
@@ -25,7 +27,7 @@ const Navbar = () => {
                 alt="logo image"
                 className="w-full h-full object-contain rounded-full"
               />
-            </div>
+            </Link>
             <h6
               data-aos="fade-left"
               data-aos-duration="1600"
@@ -58,7 +60,8 @@ const Navbar = () => {
         >
           <div className="relative w-[95%] overflow-y-scroll h-[85vh] rounded-md shadow-sm mt-[-80px]">
             <div className="flex justify-between items-center px-4">
-              <div
+              <Link
+                to={"/"}
                 data-aos="fade-up"
                 data-aos-duration="1600"
                 className="w-[60px] md:h-[60px]"
@@ -68,7 +71,7 @@ const Navbar = () => {
                   alt="logo image"
                   className="w-full h-full object-contain rounded-full"
                 />
-              </div>
+              </Link>
               <ICONS.close
                 size={35}
                 className="absolute right-3 top-3 z-50"

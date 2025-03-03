@@ -7,13 +7,13 @@ const Footer = () => {
     <React.Fragment>
       <div className="bg-[#171717] w-full h-fit text-white">
         <div className="flex justify-center flex-col items-center pt-10">
-          <div className=" w-[100px] h-[100px]">
+          <Link to={"/"} className="w-[100px] h-[100px]">
             <img
               src={image}
               alt=""
               className=" w-full h-full object-contain rounded-full"
             />
-          </div>
+          </Link>
           <h3 className="md:text-2xl text-xl font-[500] leading-8 pt-3">
             Caligata Publishing Company Limited
           </h3>
