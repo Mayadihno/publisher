@@ -8,6 +8,7 @@ import Contact from "./screen/contact/Contact";
 import About from "./screen/about/About";
 import Description from "./screen/bookdescription/Description";
 import ScrollToTop from "./components/scrolltop/ScrollTop";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/book-details/:id" element={<Description />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </>

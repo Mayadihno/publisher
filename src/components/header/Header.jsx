@@ -1,15 +1,40 @@
 import React, { useState } from "react";
 import { ICONS } from "../../static/icons/icons";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/firebaseConfig";
 
 const Header = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    setLoading(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setLoading(false);
+      setShow(false);
+      navigate("/dashboard", { replace: true });
+      e.target.reset();
+    } catch (error) {
+      if (
+        error.code === "auth/invalid-credential" ||
+        error.code === "auth/user-not-found"
+      ) {
+        setError("Incorrect Email or Password");
+        setLoading(false);
+      } else {
+        setError("Something went wrong. Please try again.");
+        setLoading(false);
+      }
+    }
   };
   return (
     <React.Fragment>
@@ -78,7 +103,7 @@ const Header = () => {
       </div>
       {show && (
         <div className="fixed w-full h-screen top-0 left-0 bg-[#00000030] z-80 flex justify-center items-center">
-          <div className="relative w-[95%] md:w-[30%] h-[38vh] md:h-[50vh] bg-white rounded-md p-4 shadow-sm md:mt-0 mt-[-50px] ">
+          <div className="relative w-[95%] md:w-[30%] h-[40vh] md:h-[50vh] bg-white rounded-md p-4 shadow-sm md:mt-0 mt-[-50px] ">
             <ICONS.close
               size={30}
               className="absolute cursor-pointer right-3 top-3 z-50"
@@ -122,6 +147,9 @@ const Header = () => {
                     />
                   )}
                 </div>
+                {error && (
+                  <div className="text-red-500 text-sm py-1">{error}</div>
+                )}
                 <div className="flex justify-between items-center pt-2">
                   <div className="flex items-center">
                     <input
@@ -140,7 +168,7 @@ const Header = () => {
                     type="submit"
                     className="px-8 uppercase py-3 bg-[#000] font-[500] cursor-pointer hover:bg-[#DC143C] rounded-sm text-white"
                   >
-                    Login
+                    {loading ? "Please wait..." : "Login"}
                   </button>
                 </div>
               </form>
