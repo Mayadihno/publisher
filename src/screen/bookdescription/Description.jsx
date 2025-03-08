@@ -25,7 +25,7 @@ const Description = () => {
               />
             </div>
           </div>
-          <div className="col-span-2 newsreader md:w-[76%] w-full">
+          <div className="col-span-2 newsreader md:w-[75%] w-full">
             <div className="flex flex-col">
               <h3 className="md:text-4xl text-2xl text-[#484C53] font-[600] leading-8">
                 {data.title}
