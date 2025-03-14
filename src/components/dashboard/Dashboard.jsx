@@ -33,7 +33,9 @@ const Dashboard = () => {
     <>
       <AdminNavbar />
       <div className="bg-gray-100 md:py-4 py-2 w-full md:px-24 px-5">
-        <h1 className="text-3xl font-bold my-6 text-center">Admin Dashboard</h1>
+        <h1 className="md:text-3xl text-xl font-bold my-6 text-center">
+          Admin Dashboard
+        </h1>
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -48,7 +50,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Activity Section */}
-        <div className="mt-10 bg-white p-6 rounded shadow-md">
+        <div className="mt-10 bg-white md:p-6 p-3 rounded shadow-md">
           <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
           <ul className="space-y-3">
             {books.length > 0 ? (
@@ -65,7 +67,7 @@ const Dashboard = () => {
         </div>
 
         {/* Quick Actions Section */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-10 md:mb-0 mb-7 grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4">
           <button
             onClick={() => navigate("/admin-upload")}
             className="bg-blue-600 cursor-pointer text-white p-4 rounded shadow-md text-lg font-semibold hover:bg-blue-700"

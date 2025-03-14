@@ -72,12 +72,14 @@ const Editbook = () => {
   return (
     <React.Fragment>
       <AdminNavbar />
-      <div className="p-6 my-6">
-        <h1 className="text-3xl text-center font-bold mb-6">Edit Book</h1>
+      <div className="md:p-6 p-3 my-6">
+        <h1 className="md:text-3xl text-xl text-center font-bold mb-6">
+          Edit Book
+        </h1>
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form
           onSubmit={handleSubmit}
-          className="p-6 rounded shadow-md w-[70%] mx-auto"
+          className="p-6 rounded shadow-md md:w-[70%] w-full mx-auto"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[

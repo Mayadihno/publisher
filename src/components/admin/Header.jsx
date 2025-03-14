@@ -5,13 +5,13 @@ import image from "../../assets/logo.png";
 const AdminNavbar = () => {
   return (
     <nav
-      className={`py-4 md:px-24 px-5 shadow-md flex items-center justify-between bg-white text-gray-900 `}
+      className={`py-4 md:px-24 px-2 shadow-md flex items-center justify-between bg-white text-gray-900 `}
     >
       <div className="flex items-center gap-4">
-        <button className="text-2xl p-2 focus:outline-none">
+        <button className="text-2xl p-2 focus:outline-none md;block hidden">
           <FiMenu />
         </button>
-        <Link to={"/admin-dashboard"} className="w-[50] md:h-[50px]">
+        <Link to={"/admin-dashboard"} className="w-[60px] h-[40px] md:h-[50px]">
           <img
             src={image}
             alt="logo image"
@@ -19,7 +19,7 @@ const AdminNavbar = () => {
           />
         </Link>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center md:gap-6 gap-3">
         <Link to="/admin-dashboard" className="hover:text-blue-600">
           Dashboard
         </Link>

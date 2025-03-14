@@ -55,8 +55,10 @@ const Books = () => {
     <React.Fragment>
       <AdminNavbar />
       <div className="bg-gray-100 min-h-screen py-6 px-5">
-        <h1 className="text-3xl font-bold my-6 text-center">All Books</h1>
-        <div className="w-[85%] mx-auto mt-10">
+        <h1 className="md:text-3xl text-xl font-bold my-6 text-center">
+          All Books
+        </h1>
+        <div className="md:w-[85%] w-[98%] mx-auto mt-10">
           {books.length > 0 ? (
             <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
               {books.map((book) => (
