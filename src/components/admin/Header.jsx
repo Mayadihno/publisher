@@ -1,8 +1,17 @@
 import { FiMenu } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/logo.png";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebaseConfig";
 
 const AdminNavbar = () => {
+  const navigate = useNavigate();
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    localStorage.removeItem("accessToken");
+    navigate("/", { replace: true });
+  };
   return (
     <nav
       className={`py-4 md:px-24 px-2 shadow-md flex items-center justify-between bg-white text-gray-900 `}
@@ -29,6 +38,12 @@ const AdminNavbar = () => {
         <Link to="/admin-upload" className="hover:text-blue-600">
           Upload Books
         </Link>
+        <button
+          className="bg-black py-2 cursor-pointer px-3 text-white rounded-md"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
       </div>
     </nav>
   );

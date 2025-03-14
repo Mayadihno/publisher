@@ -12,6 +12,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import UploadBooks from "./components/admin/UploadBooks";
 import Books from "./components/admin/Books";
 import Editbook from "./components/admin/Editbook";
+import PRoute from "./components/protected/PRoute";
 
 function App() {
   return (
@@ -24,10 +25,12 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/book-details/:id" element={<Description />} />
-        <Route path="/admin-dashboard" element={<Dashboard />} />
-        <Route path="/admin-upload" element={<UploadBooks />} />
-        <Route path="/admin-books" element={<Books />} />
-        <Route path="/admin-edit-book/:id" element={<Editbook />} />
+        <Route path="/*" element={<PRoute />}>
+          <Route path="admin-dashboard" element={<Dashboard />} />
+          <Route path="admin-upload" element={<UploadBooks />} />
+          <Route path="admin-books" element={<Books />} />
+          <Route path="admin-edit-book/:id" element={<Editbook />} />
+        </Route>
       </Routes>
       <Footer />
     </>

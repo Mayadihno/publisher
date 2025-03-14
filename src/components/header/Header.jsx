@@ -19,14 +19,15 @@ const Header = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("accessToken", user?.user?.accessToken);
       setLoading(false);
       setShow(false);
       navigate("/admin-dashboard", { replace: true });
       e.target.reset();
     } catch (error) {
       if (
-        error.code === "auth/invalid-credential" ||
+        error.code === "auth/wrong-password" ||
         error.code === "auth/user-not-found"
       ) {
         setError("Incorrect Email or Password");
@@ -37,6 +38,7 @@ const Header = () => {
       }
     }
   };
+
   return (
     <React.Fragment>
       {location.pathname.includes("/admin") ? null : (
