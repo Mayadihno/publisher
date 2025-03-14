@@ -9,6 +9,7 @@ import About from "./screen/about/About";
 import Description from "./screen/bookdescription/Description";
 import ScrollToTop from "./components/scrolltop/ScrollTop";
 import Dashboard from "./components/dashboard/Dashboard";
+import UploadBooks from "./components/admin/UploadBooks";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/book-details/:id" element={<Description />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin-dashboard" element={<Dashboard />} />
+        <Route path="/admin-upload" element={<UploadBooks />} />
       </Routes>
       <Footer />
     </>
