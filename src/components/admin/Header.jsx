@@ -11,12 +11,7 @@ const AdminNavbar = () => {
         <button className="text-2xl p-2 focus:outline-none">
           <FiMenu />
         </button>
-        <Link
-          to={"/"}
-          data-aos="fade-up"
-          data-aos-duration="1600"
-          className="w-[50] md:h-[50px]"
-        >
+        <Link to={"/admin-dashboard"} className="w-[50] md:h-[50px]">
           <img
             src={image}
             alt="logo image"
@@ -33,9 +28,6 @@ const AdminNavbar = () => {
         </Link>
         <Link to="/admin-upload" className="hover:text-blue-600">
           Upload Books
-        </Link>
-        <Link to="/admin-manage-books" className="hover:text-blue-600">
-          Manage Books
         </Link>
       </div>
     </nav>

@@ -1,23 +1,49 @@
 import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../admin/Header";
+import { useEffect, useState } from "react";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 
 const Dashboard = () => {
+  const [books, setBooks] = useState([]);
+  const [totalBooks, setTotalBooks] = useState(0);
   const navigate = useNavigate();
+
+  const fetchBooks = async () => {
+    try {
+      const q = query(collection(db, "books"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(q);
+
+      const booksData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+
+      setBooks(booksData);
+      setTotalBooks(querySnapshot.size);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
   return (
     <>
       <AdminNavbar />
-      <div className=" bg-gray-100 md:py-4 py-2 w-full md:px-24 px-5">
+      <div className="bg-gray-100 md:py-4 py-2 w-full md:px-24 px-5">
         <h1 className="text-3xl font-bold my-6 text-center">Admin Dashboard</h1>
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white p-6 rounded shadow-md text-center">
             <h2 className="text-lg font-semibold text-gray-700">Total Books</h2>
-            <p className="text-3xl font-bold text-blue-600">50</p>
+            <p className="text-3xl font-bold text-blue-600">{totalBooks}</p>
           </div>
           <div className="bg-white p-6 rounded shadow-md text-center">
             <h2 className="text-lg font-semibold text-gray-700">Total Books</h2>
-            <p className="text-3xl font-bold text-blue-600">50</p>
+            <p className="text-3xl font-bold text-blue-600">{totalBooks}</p>
           </div>
         </div>
 
@@ -25,14 +51,16 @@ const Dashboard = () => {
         <div className="mt-10 bg-white p-6 rounded shadow-md">
           <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
           <ul className="space-y-3">
-            <li className="border-b pb-2">
-              📖 <strong>John Doe</strong> uploaded a new book:{" "}
-              <em>React for Beginners</em>
-            </li>
-            <li className="border-b pb-2">
-              📝 <strong>Jane Smith</strong> updated book details for{" "}
-              <em>Mastering Firebase</em>
-            </li>
+            {books.length > 0 ? (
+              books.map((book) => (
+                <li key={book.id} className="border-b pb-2">
+                  📖 <strong>{book.author}</strong> uploaded a new book:{" "}
+                  <em>{book.title}</em> (Publisher: {book.publisher})
+                </li>
+              ))
+            ) : (
+              <li>No recent activity</li>
+            )}
           </ul>
         </div>
 

@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import AdminNavbar from "./Header";
-import { v4 as uuidv4 } from "uuid";
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
-import { toast } from "react-toastify";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../../firebase/firebaseConfig";
-import { useNavigate } from "react-router-dom";
+import AdminNavbar from "./Header";
 
-const UploadBooks = () => {
-  const [bookData, setBookData] = useState({
+const Editbook = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [book, setBook] = useState({
     title: "",
     publisher: "",
     yearOfPublishing: "",
@@ -27,63 +21,50 @@ const UploadBooks = () => {
     language: "",
     description: "",
     image: null,
+    imageUrl: "",
   });
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const storage = getStorage();
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchBook = async () => {
+      try {
+        const docRef = doc(db, "books", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setBook(docSnap.data());
+        } else {
+          setError("Book not found");
+        }
+      } catch (err) {
+        console.log(err);
+        setError("Error fetching book details");
+      }
+    };
+    fetchBook();
+  }, [id]);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setBookData((prev) => ({
-      ...prev,
-      [name]: files ? files[0] : value,
-    }));
+    setBook({ ...book, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!bookData.image) {
-      toast.error("Please select an image");
+    if (!book.title || !book.author || !book.publisher) {
+      setError("All fields are required");
       return;
     }
 
     setLoading(true);
     try {
-      const storageRef = ref(
-        storage,
-        `images/${bookData.image.name + uuidv4()}`
-      );
-      const uploadTask = uploadBytesResumable(storageRef, bookData.image);
-
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          );
-          console.log(`Upload Progress: ${progress}%`);
-        },
-        (error) => {
-          console.error("Upload Error:", error);
-          toast.error(error.message);
-          setLoading(false);
-        },
-        async () => {
-          const imageUrl = await getDownloadURL(uploadTask.snapshot.ref);
-          await addDoc(collection(db, "books"), {
-            ...bookData,
-            image: imageUrl,
-            timestamp: Date.now(),
-          });
-
-          toast.success("Book uploaded successfully!");
-          setLoading(false);
-          navigate("/admin-dashboard", { replace: true });
-        }
-      );
-    } catch (error) {
-      console.error("Submission Error:", error);
-      toast.error("Error uploading book");
+      const docRef = doc(db, "books", id);
+      const updatedBook = { ...book };
+      await updateDoc(docRef, updatedBook);
+      navigate("/admin-books");
+    } catch (err) {
+      console.log(err);
+      setError("Error updating book");
+    } finally {
       setLoading(false);
     }
   };
@@ -92,7 +73,8 @@ const UploadBooks = () => {
     <React.Fragment>
       <AdminNavbar />
       <div className="p-6 my-6">
-        <h1 className="text-3xl text-center font-bold mb-6">Upload a Book</h1>
+        <h1 className="text-3xl text-center font-bold mb-6">Edit Book</h1>
+        {error && <p className="text-red-500 text-center">{error}</p>}
         <form
           onSubmit={handleSubmit}
           className="p-6 rounded shadow-md w-[70%] mx-auto"
@@ -123,34 +105,28 @@ const UploadBooks = () => {
                 key={name}
                 type={type}
                 name={name}
+                value={book[name] || ""}
                 placeholder={placeholder}
                 className="p-4 outline-none rounded-md shadow-sm bg-[#F5F5F4] w-full"
                 onChange={handleChange}
                 required
               />
             ))}
-            <input
-              type="file"
-              name="image"
-              accept=".jpeg,.png,.jpg"
-              className="p-4 outline-none cursor-pointer rounded-md shadow-sm bg-[#F5F5F4] w-full"
-              onChange={handleChange}
-              required
-            />
           </div>
 
           <textarea
             name="description"
             placeholder="Description"
+            value={book.description || ""}
             className="w-full h-[150px] mt-6 p-4 outline-none rounded-md shadow-sm bg-[#F5F5F4]"
             onChange={handleChange}
             required
           ></textarea>
 
-          {bookData.image && (
+          {book.image && (
             <div className="w-[150px] h-[150px] my-3">
               <img
-                src={URL.createObjectURL(bookData.image)}
+                src={book.image}
                 alt="Book Cover"
                 className="w-full h-full object-contain rounded-md"
               />
@@ -165,7 +141,7 @@ const UploadBooks = () => {
               }`}
               disabled={loading}
             >
-              {loading ? "Uploading..." : "Upload Book"}
+              {loading ? "Updating..." : "Update Book"}
             </button>
           </div>
         </form>
@@ -174,4 +150,4 @@ const UploadBooks = () => {
   );
 };
 
-export default UploadBooks;
+export default Editbook;

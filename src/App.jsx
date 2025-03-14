@@ -10,6 +10,8 @@ import Description from "./screen/bookdescription/Description";
 import ScrollToTop from "./components/scrolltop/ScrollTop";
 import Dashboard from "./components/dashboard/Dashboard";
 import UploadBooks from "./components/admin/UploadBooks";
+import Books from "./components/admin/Books";
+import Editbook from "./components/admin/Editbook";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/book-details/:id" element={<Description />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/admin-upload" element={<UploadBooks />} />
+        <Route path="/admin-books" element={<Books />} />
+        <Route path="/admin-edit-book/:id" element={<Editbook />} />
       </Routes>
       <Footer />
     </>
