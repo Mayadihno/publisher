@@ -42,11 +42,11 @@ const Discovery = () => {
                       key={item.id}
                       className="cursor-pointer shadow-md"
                     >
-                      <div className="w-full h-[250px]">
+                      <div className="w-full md:h-[250px] h-[460px]">
                         <img
                           src={item.image}
                           alt={`book image ${item.id}`}
-                          className="w-full h-full object-contain transition-transform shadow-xs duration-300 ease-in-out transform perspective-3000 rotate-y-30 hover:rotate-y-3"
+                          className="w-full h-full md:object-contain object-cover transition-transform md:shadow-sm shadow-2xl duration-300 ease-in-out transform perspective-3000 rotate-y-30 hover:rotate-y-3"
                         />
                       </div>
                       <div className="bg-[#f4f4f4] p-3 rounded-md">
