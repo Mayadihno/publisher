@@ -86,9 +86,9 @@ const Header = () => {
               </div>
               <div className="md:flex hidden items-center space-x-1">
                 <ICONS.phone size={20} color="#797979" />
-                <h5 className="text-[#797979] text-base font-medium">
+                <h5 className="text-[#797979] md:text-base text-xs font-medium">
                   Free call:{" "}
-                  <span className="font-bold newsreader text-xl text-[#DE324D]">
+                  <span className="font-bold newsreader md:text-xl text-xs text-[#DE324D]">
                     +234-803-344-3562
                   </span>
                 </h5>

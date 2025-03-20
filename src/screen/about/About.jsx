@@ -9,16 +9,40 @@ const About = () => {
         <h3 className="text-5xl">About Us</h3>
       </div>
       <div className="my-10 md:max-w-5xl md:mx-auto mx-5">
+        <p className="text-lg pt-6 text-neutral-500 text-center newsreader leading-8">
+          At Caligata Publishing Company, we are passionate about preserving and
+          sharing the stories that shape our world. Specialising in the
+          publication of autobiographies, biographies, memoirs, scholarly works,
+          and religious books, we are dedicated to bringing exceptional
+          narratives to life. Our mission is to provide a platform for authors
+          to share their unique voices, insights, and experiences. Quality is
+          our watchword. From the manuscripts to the published books, we uphold
+          the highest standards of excellence in every aspect of our work. Our
+          team of experienced publishing professionals is committed to ensuring
+          that every book we produce is of the highest quality. We believe that
+          every work deserves to be executed with care and we never compromise
+          on quality. Whether it is a deeply personal memoir, a meticulously
+          researched autobiography/biography, a groundbreaking scholarly work,
+          or an inspiring religious text, we treat each project with the
+          attention and dedication it deserves. Our collaborative approach
+          ensures that authors’ perspectives and opinions are respected
+          throughout the publishing process. Your work matters. Let us
+          contribute in sharing it.
+        </p>
+      </div>
+      <div className="my-10 md:max-w-5xl md:mx-auto mx-5">
         <h2 className="md:text-5xl newsreader text-3xl text-center font-[400]">
           Our Mission
         </h2>
         <div className="w-[80px] my-3 mx-auto h-[2px] bg-[#DC143C]"></div>
         <p className="text-lg pt-6 text-neutral-500 text-center newsreader leading-8">
-          Our mission is to bring the passion and love for reading books back.
-          whether it&apos;s a regular paper book, or an online edition, we want
-          our readers to know that we appreciate quality and artful
-          storytelling. Join our community and enjoy multiple genres, modern and
-          classic authors, reviews, critics and more!
+          Our mission is to publish high-quality books that inspire, educate and
+          entertain, while making a meaningful contribution to the improvement
+          of the reading culture in our society. We believe in the
+          transformative power of books and are committed to producing works
+          that meet the highest standards. By prioritising quality in every
+          aspect of our work, we aim to publish books that are durable and
+          appealing.
         </p>
       </div>
       <div className="md:max-w-6xl md:mx-auto mx-5 my-7">

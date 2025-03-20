@@ -7,21 +7,25 @@ export const bannerData = [
   {
     id: 1,
     image: image,
-    text: "🌟 A young mind, a world of possibilities! Inspire your child’s imagination with books that spark creativity and adventure. 📖✨",
+    title: "Select Your Next Read",
+    text: "Expand your horizons and explore new worlds through the power of literature. Dive into stories that ignite curiosity, inspire creativity, and take you on unforgettable experience. 📖✨  Find the perfect book for your next journey.",
   },
   {
     id: 2,
     image: image2,
-    text: "📚 Knowledge knows no boundaries! Dive into captivating stories and empowering reads—because books belong to everyone. 💡♿",
+    title: "Choose Your Book!",
+    text: "Knowledge knows no limits. Immerse yourself in captivating narratives and empowering literature, because the world of books is for everyone. Find your next inspiring read.",
   },
   {
     id: 3,
     image: image3,
-    text: "🌙 A journey of faith and knowledge! Discover books that enrich the soul and inspire the mind, one page at a time. 🕌📚",
+    title: "Discover Your Next Book!",
+    text: " Embark on a journey of faith and enlightenment. Explore books that nourish the soul and expand the mind, one page at a time. Discover your next transformative read.",
   },
   {
     id: 4,
     image: image4,
-    text: "📖 Wisdom through the ages! A lifetime of reading leads to a lifetime of learning. Explore timeless classics and thought-provoking literature. 🏛️",
+    title: "Find Your Next masterpiece!",
+    text: "Timeless wisdom awaits. A lifetime of reading fuels a lifetime of growth. Delve into classic works and thought-provoking books. Find your next enriching read.",
   },
 ];

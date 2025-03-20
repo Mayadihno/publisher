@@ -26,9 +26,7 @@ const Banner = () => {
                 />
                 <div className="absolute inset-0 bg-black opacity-60"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-                  <h4 className="text-3xl font-semibold pb-4">
-                    Choose Your Book!
-                  </h4>
+                  <h4 className="text-3xl font-semibold pb-4">{item.title}</h4>
                   <h3 className="text-2xl font-[400] leading-9 newsreader md:w-1/2 w-full text-center">
                     {item.text}
                   </h3>
