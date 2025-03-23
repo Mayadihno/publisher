@@ -16,8 +16,26 @@ import book15 from "../../assets/Canopy/Sheikh Abubakar Gumi.jpg";
 import book16 from "../../assets/Canopy/The Diary of a Muslim Pilgrim.jpg";
 import book17 from "../../assets/Canopy/The Integrity of the Bar.jpg";
 import book18 from "../../assets/Canopy/Whither Nigeria.jpg";
+import book19 from "../../assets/Canopy/reflection.png";
 
 export const discoveryData = [
+  {
+    id: 19,
+    image: book19,
+    title: "Reflections on Government and Development in Nigerian",
+    publisher: "Brandon & Partners",
+    yearOfPublishing: 2017,
+    numberOfPages: 300,
+    isbn: "978-3-16-148410-0",
+    format: "Paperback",
+    author: "Ladipo Ademolekun",
+    categories: ["Health, Emergency Care"],
+    price: "3000",
+    genre: "Educational",
+    language: "English",
+    description:
+      "A comprehensive guide to handling medical emergencies effectively.",
+  },
   {
     id: 1,
     image: book1,
@@ -177,9 +195,9 @@ export const discoveryData = [
     numberOfPages: 350,
     isbn: "978-3-45-789012-3",
     format: "Paperback",
-    author: "Chef Antonio Rossi",
+    author: "Ladipo Ademolekun",
     categories: ["Cooking, Recipe Books"],
-    price: "5199",
+    price: "1500",
     genre: "Culinary",
     language: "English",
     description: "A complete guide to mastering global cuisines.",
