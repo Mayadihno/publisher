@@ -75,7 +75,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-end items-center my-10 gap-10 my-20">
+        <div className="flex flex-col md:flex-row justify-end items-center md:my-10 gap-10 my-20">
           <div className="relative w-full md:w-[50%] h-[300px]">
             <img
               src="https://images.pexels.com/photos/9572619/pexels-photo-9572619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
