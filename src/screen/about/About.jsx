@@ -1,6 +1,5 @@
 import React from "react";
 import { iconsData } from "../../static/data";
-import Leader from "../../components/team/Leader";
 
 const About = () => {
   return (
@@ -104,7 +103,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-y-6 md:gap-y-0 md:grid-cols-5 mb-20">
+        <div className="grid grid-cols-2 gap-y-6 md:gap-y-0 md:grid-cols-5 my-20">
           {iconsData.map((item) => {
             return (
               <div
@@ -124,7 +123,7 @@ const About = () => {
           })}
         </div>
       </div>
-      <Leader />
+      {/* <Leader /> */}
     </React.Fragment>
   );
 };

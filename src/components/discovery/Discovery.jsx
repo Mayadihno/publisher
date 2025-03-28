@@ -36,7 +36,7 @@ const Discovery = () => {
             {data.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="bg-[#f4f4f4] py-2">
+                  <div className="bg-[#f4f4f4] md:py-2">
                     <Link
                       to={`/book-details/${item.id}`}
                       key={item.id}
@@ -46,7 +46,7 @@ const Discovery = () => {
                         <img
                           src={item.image}
                           alt={`book image ${item.id}`}
-                          className="w-full h-full md:object-contain object-cover transition-transform md:shadow-sm shadow-2xl duration-300 ease-in-out transform perspective-3000 rotate-y-30 hover:rotate-y-3"
+                          className="w-full h-full md:object-contain object-cover transition-transform md:shadow-sm shadow-2xl duration-300 ease-in-out transform perspective-3000 md:rotate-y-30 hover:rotate-y-3"
                         />
                       </div>
                       <div className="bg-[#f4f4f4] p-3 rounded-md">

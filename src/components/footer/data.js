@@ -50,17 +50,21 @@ export const socialMedia = [
   {
     id: 1,
     icon: ICONS.facebook,
+    link: "",
   },
   {
     id: 2,
     icon: ICONS.instagram,
+    link: "",
   },
   {
     id: 3,
     icon: ICONS.x,
+    link: "",
   },
   {
     id: 4,
     icon: ICONS.whatsapp,
+    link: "https://wa.me/+2348100712661",
   },
 ];

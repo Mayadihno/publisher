@@ -10,8 +10,6 @@ const Menubar = ({ setShow }) => {
       <div className="flex flex-col mt-3 border-t-[1px] border-gray-500">
         {navItems.map((item) => (
           <div
-            // data-aos="fade-left"
-            // data-aos-delay="600"
             key={item.id}
             className={`${
               location.pathname === item.link ? "text-[#DC143C]" : "text-white"
@@ -26,7 +24,12 @@ const Menubar = ({ setShow }) => {
       <div className="border-t-[1px] border-gray-500 mt-4">
         <div className="flex flex-row space-x-8 mt-4 pl-4">
           {socialMedia.map((item) => (
-            <Link to={item.link} className="flex items-center" key={item.id}>
+            <Link
+              to={item.link}
+              target="_blank"
+              className="flex items-center"
+              key={item.id}
+            >
               <div className="w-[40px] text-[#DC143C] hover:text-[#fff] hover:border-[#DC143C] hover:bg-[#DC143C] flex justify-center items-center h-[40px] border-2 border-[#fff] rounded-full p-3">
                 <item.icon size={20} />
               </div>
