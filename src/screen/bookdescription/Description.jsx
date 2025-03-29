@@ -54,10 +54,6 @@ const Description = () => {
               </div>
               <div className="space-y-4">
                 <h3 className="text-base">
-                  <span className="text-gray-500 font-[500]">Publisher:</span>{" "}
-                  <span className="pl-2">{data.publisher}</span>
-                </h3>
-                <h3 className="text-base">
                   <span className="text-gray-500 font-[500]">
                     Year of Publishing:
                   </span>{" "}
@@ -127,14 +123,7 @@ const Description = () => {
                         {data.format}
                       </td>
                     </tr>
-                    <tr className=" border-t divide-x-2">
-                      <td className="md:py-4 py-1 md:px-6 px-2 whitespace-nowrap text-sm font-normal md:font-medium text-gray-900">
-                        Genre
-                      </td>
-                      <td className="md:py-4 py-1 md:px-6 px-3 whitespace-nowrap font-semibold text-base text-gray-500">
-                        {data.genre}
-                      </td>
-                    </tr>
+
                     <tr className=" border-t divide-x-2">
                       <td className="md:py-4 py-1 md:px-6 px-2 whitespace-nowrap text-sm font-normal md:font-medium text-gray-900">
                         Language

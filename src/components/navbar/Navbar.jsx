@@ -41,13 +41,25 @@ const Navbar = () => {
               </h6>
             </div>
 
-            <div
-              data-aos="zoom-in-left"
-              data-aos-duration="1700"
-              className="md:block hidden"
-            >
-              <NavItems />
+            <div className="flex space-x-10">
+              <div
+                data-aos="zoom-in-left"
+                data-aos-duration="1700"
+                className="md:block hidden"
+              >
+                <NavItems />
+              </div>
+
+              <Link to={"/cart"}>
+                <div className="relative cursor-pointer">
+                  <ICONS.cart size={25} />
+                  <span className=" absolute -top-3 -right-3 bg-[#B10C62] w-[20px] h-[20px] text-white rounded-full flex items-center justify-center">
+                    {/* {cartItems?.length} */} 2
+                  </span>
+                </div>
+              </Link>
             </div>
+
             <div className="block md:hidden" onClick={() => setShow(!show)}>
               {!show && <ICONS.menu size={25} color="#DC143C" />}
             </div>

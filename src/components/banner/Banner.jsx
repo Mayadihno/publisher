@@ -4,7 +4,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import { bannerData } from "./data";
+import { useNavigate } from "react-router-dom";
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <div className="relative z-0">
@@ -31,7 +33,10 @@ const Banner = () => {
                     {item.text}
                   </h3>
                   <div className="mt-6">
-                    <button className="px-5 uppercase py-3 bg-[#000] font-[500] cursor-pointer hover:bg-[#DC143C] rounded-sm text-white">
+                    <button
+                      onClick={() => navigate("/store")}
+                      className="px-5 uppercase py-3 bg-[#000] font-[500] cursor-pointer hover:bg-[#DC143C] rounded-sm text-white"
+                    >
                       Discover your next book
                     </button>
                   </div>

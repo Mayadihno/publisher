@@ -10,32 +10,32 @@ export const genreData = [
   {
     id: 1,
     image: image,
-    title: "Art",
+    title: "Autobiography",
   },
   {
     id: 2,
     image: image2,
-    title: "Romance",
+    title: "Memoir",
   },
   {
     id: 3,
     image: image3,
-    title: "Adventure",
+    title: "Politics and History",
   },
   {
     id: 4,
     image: image4,
-    title: "Action",
+    title: "Business and Economy",
   },
   {
     id: 5,
     image: image5,
-    title: "Mystery",
+    title: "Education",
   },
   {
     id: 6,
     image: image6,
-    title: "Science",
+    title: "Religion",
   },
   {
     id: 7,

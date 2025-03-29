@@ -9,6 +9,7 @@ import { GoEye, GoEyeClosed } from "react-icons/go";
 import { PiPhoneCallThin } from "react-icons/pi";
 import { BsSend } from "react-icons/bs";
 import { IoLocation } from "react-icons/io5";
+import { SlHandbag } from "react-icons/sl";
 
 export const ICONS = {
   instagram: FaInstagram,
@@ -27,4 +28,5 @@ export const ICONS = {
   facebook: FaFacebookF,
   send: BsSend,
   time: MdAccessTime,
+  cart: SlHandbag,
 };

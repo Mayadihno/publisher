@@ -1,14 +1,16 @@
 import React from "react";
 import { discoveryData } from "./data";
 import { iconsData } from "../../static/data";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
+import { formatCurrency } from "../../static/currencyConverter/format";
 
 const Discovery = () => {
   const data = discoveryData.map((item) => item).splice(0, 8);
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <div className="my-20">
@@ -51,18 +53,18 @@ const Discovery = () => {
                       </div>
                       <div className="bg-[#f4f4f4] p-3 rounded-md">
                         <h4 className="text-base font-[500]">{item.title}</h4>
-                        <div className="pt-2">
+                        <div className="pt-3 flex justify-between items-center">
                           <p className="text-sm font-[400]">
                             Author: <span>{item.author}</span>
                           </p>
-                          <div className="flex justify-between items-center pt-2">
-                            <p className="text-xs font-[400]">
-                              Publisher: <span>{item.publisher}</span>
-                            </p>
-                            <p className="text-xs font-[400]">
-                              Genre: <span>{item.genre}</span>
-                            </p>
-                          </div>
+                          <p className="text-sm font-[400]">
+                            Price: <span>{formatCurrency(item.price)}</span>
+                          </p>
+                        </div>
+                        <div className="pt-3">
+                          <button className="bg-[#DC143C] w-full rounded-md cursor-pointer py-2 px-4 text-white">
+                            Add to cart
+                          </button>
                         </div>
                       </div>
                     </Link>
@@ -74,7 +76,10 @@ const Discovery = () => {
         </div>
 
         <div className="mt-6 flex items-center justify-center">
-          <button className="px-5 uppercase py-3 bg-[#000] font-[500] cursor-pointer hover:bg-[#DC143C] rounded-sm text-white">
+          <button
+            onClick={() => navigate("/store")}
+            className="px-5 uppercase py-3 bg-[#000] font-[500] cursor-pointer hover:bg-[#DC143C] rounded-sm text-white"
+          >
             Discover more books
           </button>
         </div>

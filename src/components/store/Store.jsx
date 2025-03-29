@@ -42,18 +42,10 @@ const Store = () => {
                   </div>
                   <div className="bg-[#f4f4f4] p-3 rounded-md">
                     <h4 className="text-base font-[500]">{item.title}</h4>
-                    <div className="pt-2">
+                    <div className="pt-3">
                       <p className="text-sm font-[400]">
                         Author: <span>{item.author}</span>
                       </p>
-                      <div className="flex justify-between items-center pt-2">
-                        <p className="text-xs font-[400]">
-                          Publisher: <span>{item.publisher}</span>
-                        </p>
-                        <p className="text-xs font-[400]">
-                          Genre: <span>{item.genre}</span>
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </Link>
