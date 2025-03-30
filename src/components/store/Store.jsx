@@ -61,7 +61,7 @@ const Store = () => {
                 (cartItem) => cartItem.id === item.id
               );
               return (
-                <div className="bg-[#f4f4f4]" key={item.id}>
+                <div className="bg-[#f4f4f4] relative h-[400px]" key={item.id}>
                   <Link
                     to={`/book-details/${item.id}`}
                     key={item.id}
@@ -86,7 +86,7 @@ const Store = () => {
                       </div>
                     </div>
                   </Link>
-                  <div className="pt-3">
+                  <div className="absolute bottom-0 left-0 right-0">
                     {isExisting ? (
                       <button
                         onClick={() => handleRemove(item.id)}

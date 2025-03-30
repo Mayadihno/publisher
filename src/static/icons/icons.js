@@ -8,6 +8,8 @@ import {
   MdEmail,
   MdAccessTime,
   MdOutlineAddShoppingCart,
+  MdDelete,
+  MdAdd,
 } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 import { GoEye, GoEyeClosed } from "react-icons/go";
@@ -15,6 +17,7 @@ import { PiPhoneCallThin } from "react-icons/pi";
 import { BsSend } from "react-icons/bs";
 import { IoLocation } from "react-icons/io5";
 import { SlHandbag } from "react-icons/sl";
+import { LuMinus } from "react-icons/lu";
 
 export const ICONS = {
   instagram: FaInstagram,
@@ -35,4 +38,7 @@ export const ICONS = {
   time: MdAccessTime,
   cart: SlHandbag,
   addToCart: MdOutlineAddShoppingCart,
+  delete: MdDelete,
+  minus: LuMinus,
+  add: MdAdd,
 };

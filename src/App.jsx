@@ -14,6 +14,7 @@ import Books from "./components/admin/Books";
 import Editbook from "./components/admin/Editbook";
 import PRoute from "./components/protected/PRoute";
 import Store from "./components/store/Store";
+import Cart from "./screen/cart/Cart";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/book-details/:id" element={<Description />} />
         <Route path="/*" element={<PRoute />}>
           <Route path="admin-dashboard" element={<Dashboard />} />
