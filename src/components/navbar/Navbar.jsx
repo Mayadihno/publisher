@@ -4,8 +4,10 @@ import { ICONS } from "../../static/icons/icons";
 import image from "../../assets/logo.png";
 import Menubar from "./Menubar";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { cartItems } = useSelector((state) => state.cart);
   const [show, setShow] = useState(false);
   const location = useLocation();
   return (
@@ -53,9 +55,11 @@ const Navbar = () => {
               <Link to={"/cart"}>
                 <div className="relative cursor-pointer">
                   <ICONS.cart size={25} />
-                  <span className=" absolute -top-3 -right-3 bg-[#B10C62] w-[20px] h-[20px] text-white rounded-full flex items-center justify-center">
-                    {/* {cartItems?.length} */} 2
-                  </span>
+                  {cartItems.length > 0 && (
+                    <span className=" absolute -top-3 -right-3 bg-[#B10C62] w-[20px] h-[20px] text-white rounded-full flex items-center justify-center">
+                      {cartItems?.length}
+                    </span>
+                  )}
                 </div>
               </Link>
             </div>

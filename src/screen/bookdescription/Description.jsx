@@ -3,11 +3,47 @@ import { useParams } from "react-router-dom";
 import { discoveryData } from "../../components/discovery/data";
 import { formatCurrency } from "../../static/currencyConverter/format";
 import { ICONS } from "../../static/icons/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "../../redux/slice";
+import toast from "react-hot-toast";
 
 const Description = () => {
+  const { cartItems } = useSelector((state) => state.cart);
   const { id } = useParams();
   const [active, setActive] = useState(1);
+  const [count, setCount] = useState(1);
   const data = discoveryData.find((i) => i.id === Number(id));
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    const isItemExist = cartItems && cartItems.find((i) => i.id === item.id);
+    if (isItemExist) {
+      toast.error("Item already exist in cart");
+      return;
+    } else {
+      const cartItem = {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        image: item.image,
+        qty: count,
+        yearOfPublishing: item.yearOfPublishing,
+        format: item.format,
+        language: item.language,
+        author: item.author,
+      };
+      dispatch(addProductToCart(cartItem));
+      localStorage.setItem("cart", JSON.stringify([...cartItems, cartItem]));
+      toast.success("Item added to cart successfully");
+    }
+  };
+
+  const decrementCount = () => {
+    setCount((prev) => (prev === 1 ? 1 : prev - 1));
+  };
+  const incrementCount = () => {
+    setCount((prev) => prev + 1);
+  };
 
   return (
     <React.Fragment>
@@ -75,6 +111,35 @@ const Description = () => {
                     {data.categories.map((item) => item)}
                   </span>
                 </h3>
+              </div>
+              <div className="mt-10 mb-6">
+                <div className="flex items-center justify-between pr-3">
+                  <div className=" font-unkempt">
+                    <button
+                      className="bg-gradient-to-r cursor-pointer from-teal-400 to-teal-500 text-white 
+                            font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
+                      onClick={decrementCount}
+                    >
+                      -
+                    </button>
+                    <span className="bg-gray-200 text-gray-800 font-medium px-4 py-[11px]">
+                      {count}
+                    </span>
+                    <button
+                      className="bg-gradient-to-r cursor-pointer from-teal-400 to-teal-500 text-white font-bold
+                             rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
+                      onClick={incrementCount}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="button" onClick={() => handleAddToCart(data)}>
+                    <button className="bg-[#B10C62] text-white cursor-pointer py-2 px-4 rounded flex items-center">
+                      <ICONS.addToCart size={20} className="mr-2" />
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

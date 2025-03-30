@@ -7,10 +7,41 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import { formatCurrency } from "../../static/currencyConverter/format";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart, removeProductFromCart } from "../../redux/slice";
+import toast from "react-hot-toast";
 
 const Discovery = () => {
+  const { cartItems } = useSelector((state) => state.cart);
   const data = discoveryData.map((item) => item).splice(0, 8);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    const cartItem = {
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      image: item.image,
+      qty: 1,
+      yearOfPublishing: item.yearOfPublishing,
+      format: item.format,
+      language: item.language,
+      author: item.author,
+    };
+    dispatch(addProductToCart(cartItem));
+    localStorage.setItem("cart", JSON.stringify([...cartItems, cartItem]));
+    toast.success("Item added to cart successfully");
+  };
+
+  const handleRemove = (id) => {
+    dispatch(removeProductFromCart(id));
+    localStorage.setItem(
+      "cart",
+      JSON.stringify(cartItems.filter((product) => product.id !== id))
+    );
+  };
+
   return (
     <React.Fragment>
       <div className="my-20">
@@ -36,9 +67,12 @@ const Discovery = () => {
             }}
           >
             {data.map((item) => {
+              const isExisting = cartItems.some(
+                (cartItem) => cartItem.id === item.id
+              );
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="bg-[#f4f4f4] md:py-2">
+                  <div className="bg-[#f4f4f4]">
                     <Link
                       to={`/book-details/${item.id}`}
                       key={item.id}
@@ -61,13 +95,25 @@ const Discovery = () => {
                             Price: <span>{formatCurrency(item.price)}</span>
                           </p>
                         </div>
-                        <div className="pt-3">
-                          <button className="bg-[#DC143C] w-full rounded-md cursor-pointer py-2 px-4 text-white">
-                            Add to cart
-                          </button>
-                        </div>
                       </div>
                     </Link>
+                    <div className="pt-3">
+                      {isExisting ? (
+                        <button
+                          onClick={() => handleRemove(item.id)}
+                          className="bg-[#DC143C] w-full rounded-md cursor-pointer py-2 px-4 text-white"
+                        >
+                          Remove from cart
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleAddToCart(item)}
+                          className="bg-[#000] w-full rounded-md cursor-pointer py-2 px-4 text-white"
+                        >
+                          Add to cart
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </SwiperSlide>
               );
