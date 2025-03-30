@@ -1,9 +1,18 @@
-import { getStorage } from "firebase/storage";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { formatCurrency } from "../../static/currencyConverter/format";
 import toast from "react-hot-toast";
+import { v4 as uuidv4 } from "uuid";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
+import { clearCart } from "../../redux/slice";
 
 const Checkout = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -20,6 +29,7 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const storage = getStorage();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -45,6 +55,47 @@ const Checkout = () => {
       return;
     }
     console.log(formData);
+    try {
+      const storageRef = ref(
+        storage,
+        `images/${formData.receipt.name + uuidv4()}`
+      );
+      const uploadTask = uploadBytesResumable(storageRef, formData.receipt);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          console.log(`Upload Progress: ${progress}%`);
+        },
+        (error) => {
+          console.error("Upload Error:", error);
+          toast.error(error.message);
+          setLoading(false);
+        },
+        async () => {
+          const imageUrl = await getDownloadURL(uploadTask.snapshot.ref);
+          await addDoc(collection(db, "payment"), {
+            ...formData,
+            receipt: imageUrl,
+            cartItems: cartItems,
+            total: subtotal,
+            timestamp: Date.now(),
+          });
+
+          toast.success("Payment submitted successfully!");
+          localStorage.removeItem("cart");
+          dispatch(clearCart());
+          setLoading(false);
+          navigate("/", { replace: true });
+        }
+      );
+    } catch (error) {
+      console.error("Submission Error:", error);
+      toast.error("Error uploading book");
+      setLoading(false);
+    }
   };
 
   return (
