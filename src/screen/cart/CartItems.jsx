@@ -54,7 +54,7 @@ const CartItems = () => {
           </div>
         </div>
         <Link
-          href={"/checkout"}
+          to={"/checkout"}
           className="p-4 text-white newsreader pt-8 md:hidden block"
         >
           <button
