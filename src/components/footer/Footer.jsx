@@ -110,7 +110,8 @@ const Footer = () => {
         </div>
         <div className=" border-t-[1px] md:mt-10 mt-5 border-[#fff] max-w-9xl mx-auto">
           <p className="text-center md:text-sm text-xs text-gray-400 py-5">
-            Copyright {new Date().getFullYear()} © Theme Created By{" "}
+            Copyright © {new Date().getFullYear()} CALIGATA PUBLISHING COMPANY
+            LIMITED Website Powered by{" "}
             <a
               href="https://mayadihno.vercel.app/"
               target="_blank"
@@ -118,7 +119,7 @@ const Footer = () => {
               className="text-[#DC143C] hover:underline"
             >
               Mayadihno
-            </a>{" "}
+            </a>.{" "}
             All Rights Reserved
           </p>
         </div>
