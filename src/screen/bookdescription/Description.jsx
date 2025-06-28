@@ -98,12 +98,6 @@ const Description = () => {
                   <span className="text-gray-500 font-[500]">ISBN:</span>{" "}
                   <span className="pl-2">{data.isbn}</span>
                 </h3>
-                <h3 className="text-base">
-                  <span className="text-gray-500 font-[500]">Categories:</span>{" "}
-                  <span className="pl-2">
-                    {data.categories.map((item) => item)}
-                  </span>
-                </h3>
               </div>
               <div className="mt-10 mb-6">
                 <div className="flex items-center justify-between pr-3">
