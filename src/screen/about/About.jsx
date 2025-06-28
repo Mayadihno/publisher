@@ -58,39 +58,8 @@ const About = () => {
               worldwide.
             </p>
           </div>
-          <div className="relative w-full h-[300px] md:mt-0 mt-10">
-            <img
-              src="https://images.pexels.com/photos/7710153/pexels-photo-7710153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Main Image"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-
-            <div className="absolute md:bottom-[1px] bottom-[-50px] md:right-[-60px] right-1 w-[280px] h-[170px]">
-              <img
-                src="https://images.pexels.com/photos/6592746/pexels-photo-6592746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Overlay Image"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
         </div>
         <div className="flex flex-col md:flex-row justify-end items-center md:my-10 gap-10 my-20">
-          <div className="relative w-full md:w-[50%] h-[300px]">
-            <img
-              src="https://images.pexels.com/photos/9572619/pexels-photo-9572619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Main Image"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-
-            <div className="absolute md:top-[-50px] top-40 left-22 md:left-[-50px] w-[280px] h-[170px] md:w-[280px] md:h-[180px] shadow-xl">
-              <img
-                src="https://images.pexels.com/photos/6157214/pexels-photo-6157214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Overlay Image"
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-
           <div className="w-full md:w-[40%] text-right md:pt-0 pt-7 transform scale-x-[1] md:ml-auto">
             <h2 className="text-4xl font-bold text-gray-900">What We Do</h2>
             <h3 className="text-lg font-medium text-neutral-500 italic">

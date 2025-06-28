@@ -111,16 +111,7 @@ const Footer = () => {
         <div className=" border-t-[1px] md:mt-10 mt-5 border-[#fff] max-w-9xl mx-auto">
           <p className="text-center md:text-sm text-xs text-gray-400 py-5">
             Copyright © {new Date().getFullYear()} CALIGATA PUBLISHING COMPANY
-            LIMITED Website Powered by{" "}
-            <a
-              href="https://mayadihno.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#DC143C] hover:underline"
-            >
-              Mayadihno
-            </a>.{" "}
-            All Rights Reserved
+            LIMITED. All Rights Reserved
           </p>
         </div>
       </div>

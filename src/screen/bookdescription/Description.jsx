@@ -81,14 +81,7 @@ const Description = () => {
                   <ICONS.star color="#CC302B" />
                 </div>
               </div>
-              <div className="my-6">
-                <p className="md:text-base text-sm leading-8 text-neutral-500">
-                  Dicta sunt explicabo. Nemo enim ipsam voluptatem voluptas sit
-                  odit aut fugit, sed quia consequuntur. Lorem ipsum dolor.
-                  Aquia sit amet, elitr, sed diam nonum eirmod tempor invidunt.
-                </p>
-              </div>
-              <div className="space-y-4">
+              <div className="space-y-4 mt-6">
                 <h3 className="text-base">
                   <span className="text-gray-500 font-[500]">
                     Year of Publishing:
@@ -171,9 +164,10 @@ const Description = () => {
           <div className="mt-3">
             {active === 1 && (
               <div className="my-6">
-                <p className="leading-10 md:text-base text-sm font-normal">
-                  {data.description}
-                </p>
+                <div
+                  className="leading-10 md:text-base text-sm font-normal"
+                  dangerouslySetInnerHTML={{ __html: data.description }}
+                ></div>
               </div>
             )}
             {active === 2 && (
